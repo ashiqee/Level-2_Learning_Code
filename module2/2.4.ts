@@ -1,6 +1,6 @@
 {
     // interface -generic
- interface Developer<T> {
+ interface Developer<T,X=null> {
     name:string;
     computer:{
         brand: string;
@@ -8,14 +8,18 @@
         releaseYear: number
         
     }
-    smartWatch:T
+    smartWatch:T;
+    bike?:X
  }
 
- const  poorDeveloper : Developer<{
+type EmilaWatch = {
     brand:string;
     model:string;
     display: string;
- }> ={
+ }
+
+
+ const  poorDeveloper : Developer<EmilaWatch> ={
     name: "Persian",
     computer:{
         brand: "Asus",
@@ -28,12 +32,19 @@
         display : "OLED",
     },
  };
- const  richDeveloper : Developer<{
+
+ interface AppleWatch {
     brand:string;
     model:string;
     heartTrack: boolean;
     sleeptrack: boolean;
- }> ={
+ }
+
+ interface YamahaBike {
+    model: string;
+    engineCapacity: string;
+ }
+ const  richDeveloper : Developer<AppleWatch,YamahaBike> ={
     name: "Rich MArsh",
     computer:{
         brand: "Hp",
@@ -46,6 +57,10 @@
         heartTrack :true,
         sleeptrack:true,
     },
+    bike:{
+        model: "Yamaha",
+        engineCapacity:"100cc"
+    }
  };
 
 
