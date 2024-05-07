@@ -38,6 +38,6 @@ const user : GenericArray<User>= [
     const man: GenericTuple<string,string> = ['M X', 'M Y']
 
 
-    const UserWithID :GenericTuple<number,{name:string,email:string}> - [1234, {name: "persian", email:"a@gmail.com"}]
+    const UserWithID :GenericTuple<number,{name:string,email:string}> = [1234, {name: "persian", email:"a@gmail.com"}]
 
 }
